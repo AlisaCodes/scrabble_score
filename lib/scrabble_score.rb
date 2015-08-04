@@ -26,8 +26,12 @@ class String
               "x" => 8,
               "q" => 10,
               "z" => 10 }
-      final_score = 0
-      scores.fetch(self)
-
+    final_score = 0
+    word = self.split('')
+    word.each() do |letter|
+      score = scores.fetch(letter)
+      final_score = score.+(final_score)
+    end
+    final_score
   end
 end
